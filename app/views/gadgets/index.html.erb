@@ -1,4 +1,8 @@
-<h1>Listing gadgets</h1>
+<h1>My gadgets</h1>
+<div class="row">
+	
+
+
 
 <table>
   <thead>
@@ -21,6 +25,7 @@
         <td><%= gadget.description %></td>
 
         <td><%= gadget.price %></td>
+        <td><%#= gadget.avatar_url(:thumb) %></td>
         
         
 
@@ -31,7 +36,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
 <%= link_to 'New Gadget', new_gadget_path %>

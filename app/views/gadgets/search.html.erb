@@ -1,0 +1,6 @@
+<ul>
+    <% @mygadget.each do |gadget| %>
+  <li><%= link_to gadget.name, 
+    :action => 'show', :id => gadget.id  %></li>
+  <% end %>
+  </ul>

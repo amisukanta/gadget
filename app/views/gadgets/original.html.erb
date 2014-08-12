@@ -20,11 +20,7 @@
 <ul class="list-view" style="list-style:none;">
 <% @gadget_attachments.each do |p| %>
 
-<li>  <%= image_tag p.avatar_url(:thumb) %> </li>
+<li>  <%= image_tag p.avatar_url %> </li>
 <% end %>
 </ul>
 </p>
-
-<%#= link_to 'Original Images', {:controller => 'gadgets', :action => 'original', :id => "#{@gadget.id }" } %>
-
-
