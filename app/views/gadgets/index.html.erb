@@ -6,43 +6,26 @@
   </div>
 </div>
 <div class="row">
-	
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-
-      <th>Price</th>
-      <th>Image</th>
+<% @gadgets.each do |gadget| %>
+  
+    
+      <div class="span4">
 
       
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gadgets.each do |gadget| %>
-      <tr>
-        <td><%= gadget.name %></td>
-        <td><%= gadget.description %></td>
-
-        <td><%= gadget.price %></td>
-        <td><%#= gadget.avatar_url(:thumb) %></td>
+        <h4><%= link_to gadget.name, gadget %></h4>
         
-        
-
-        <td><%= link_to 'Show', gadget %></td>
-        <td><%= link_to 'Edit', edit_gadget_path(gadget) %></td>
-        <td><%= link_to 'Destroy', gadget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+ 
+
+
+
+
+
+
+
+
+<div class="pull-right">
+<%= link_to 'New Gadget', new_gadget_path, :class =>'btn btn-primary' %>
 </div>
-
-
-<%= link_to 'New Gadget', new_gadget_path %>
+</div>

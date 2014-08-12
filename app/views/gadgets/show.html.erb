@@ -15,16 +15,21 @@
   <strong>Price:</strong>
   <%= @gadget.price %>
 </p>
-
-<p>
-<ul class="list-view" style="list-style:none;">
+ <ul class="row">
 <% @gadget_attachments.each do |p| %>
+<li class="">
+          <%= image_tag p.avatar_url(:thumb) %>    
+            </li>
 
-<li>  <%= image_tag p.avatar_url(:thumb) %> </li>
 <% end %>
 </ul>
-</p>
 
+
+   <p>
+      <%= link_to 'Edit', edit_gadget_path(@gadget) %> |
+      <%= link_to 'Destroy', @gadget, confirm: 'Are you sure?', method: :destroy %> |
+      <%#= link_to 'Home', gadgets_path %>
+    </p>
 <%#= link_to 'Original Images', {:controller => 'gadgets', :action => 'original', :id => "#{@gadget.id }" } %>
 
 

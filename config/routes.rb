@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    root :to => 'gadgets#index', :as => 'home'
-  resources :gadgets
+   resources :gadgets
   
   get 'gadgets/index'
 
@@ -11,12 +11,15 @@ Rails.application.routes.draw do
   get 'gadgets/create'
 
   get 'gadgets/update'
+  
+  #get 'gadgets/search'
 
-  get 'gadgets/search'
+  #match '/search', to: '/gadgets/search_result', :via => [:get, :post]
   match "/gadgets/search_result", :via => [:get, :post]
   get 'gadgets/search_result'
   get 'gadgets/original'
   devise_for :users
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

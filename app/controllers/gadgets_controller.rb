@@ -48,6 +48,7 @@ before_action :authenticate_user!
       flash[:notice] = "Cant create your gadgets"
       render 'new'
     end
+    redirect_to @gadget
   end
 
   def update
@@ -59,7 +60,14 @@ before_action :authenticate_user!
     redirect_to @gadget
      
   end
-
+  def destroy
+    if @gadget.destroy
+      flash[:notice] = "Deleted Successfully!"
+      redirect_to @gadget
+    else
+      flash[:notice] = "Can't be deleted"
+    end
+  end
 
   private
    
