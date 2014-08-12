@@ -1,0 +1,2 @@
+class GadgetAttachmentsController < ApplicationController
+end

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gadget.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gadget.description %>
+</p>
+
+<p>
+
+  <strong>Price:</strong>
+  <%= @gadget.price %>
+</p>
+
+
+
+<% @gadget_attachments.each do |p| %>
+  <%= image_tag p.avatar_url %>
+<% end %>
+
+
+
+
+<%= link_to 'Edit', edit_gadget_path(@gadget) %> |
+<%= link_to 'Back', gadgets_path %>
+
