@@ -1,15 +1,10 @@
 <h1>My gadgets</h1>
-<div class="row">
-	
-	<div id="search">
-    <%= render :partial => 'gadgets/search' %>
-  </div>
-</div>
+
 <div class="row">
 <% @gadgets.each do |gadget| %>
   
     
-      <div class="span4">
+      <div class="span3">
 
       
         <h4><%= link_to gadget.name, gadget %></h4>
@@ -17,13 +12,6 @@
       </div>
     <% end %>
  
-
-
-
-
-
-
-
 
 <div class="pull-right">
 <%= link_to 'New Gadget', new_gadget_path, :class =>'btn btn-primary' %>
